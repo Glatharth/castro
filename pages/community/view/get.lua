@@ -2,7 +2,7 @@ function get()
     local data = {}
     local name = url:decode(http.getValues.name)
 
-    data.info, cache = db:singleQuery("SELECT a.id, a.account_id, e.premdays, e.creation, d.name AS rank, c.name AS guild, a.name, a.stamina, a.sex, a.vocation, a.level, a.town_id, a.lastlogin, a.lastlogout, a.maglevel, a.skill_sword, a.skill_axe, a.skill_club, a.skill_dist, a.skill_fist, a.skill_shielding, a.skill_fishing FROM players a LEFT JOIN guild_membership b ON b.player_id = a.id LEFT JOIN guilds c ON c.id = b.guild_id LEFT JOIN guild_ranks d ON d.id = b.rank_id LEFT JOIN accounts e ON e.id = a.account_id WHERE a.name = ?", name)
+    data.info, cache = db:singleQuery("SELECT a.id, a.account_id, e.premdays, e.creation, d.name AS `rank`, c.name AS guild, a.name, a.stamina, a.sex, a.vocation, a.level, a.town_id, a.lastlogin, a.lastlogout, a.maglevel, a.skill_sword, a.skill_axe, a.skill_club, a.skill_dist, a.skill_fist, a.skill_shielding, a.skill_fishing FROM players a LEFT JOIN guild_membership b ON b.player_id = a.id LEFT JOIN guilds c ON c.id = b.guild_id LEFT JOIN guild_ranks d ON d.id = b.rank_id LEFT JOIN accounts e ON e.id = a.account_id WHERE a.name = ?", name)
 
     if data.info == nil then
         http:redirect("/")

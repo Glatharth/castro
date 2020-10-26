@@ -1,5 +1,4 @@
 -- This file will be executed at start-up
-
 require "extensionhooks"
 
 if app.Mode == "dev" then

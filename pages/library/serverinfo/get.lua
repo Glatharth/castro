@@ -12,11 +12,6 @@ function get()
     data.timeToDecreaseFrags = time:newDuration(config:get("timeToDecreaseFrags") * math.pow(10, 6))
     data.whiteSkullTime = time:newDuration(config:get("whiteSkullTime") * math.pow(10, 6))
 
-    local stages = xml:unmarshalFile(serverPath .. "/data/XML/stages.xml")
-
-    if stages.stages.config["-enabled"] == "1" then
-        data.stages = stages
-    end
 
     http:render("serverinfo.html", data)
 end

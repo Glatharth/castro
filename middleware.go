@@ -104,7 +104,7 @@ func (s *securityHandler) ServeHTTP(w http.ResponseWriter, req *http.Request, ne
 	if !ok {
 
 		// Create new nonce value
-		nonce = uniuri.NewLen(3)
+		nonce = uniuri.NewLen(15)
 
 		// Save new nonce to cache
 		util.Cache.Set("nonce", nonce, time.Minute*20)
