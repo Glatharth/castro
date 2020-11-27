@@ -1,12 +1,12 @@
 -- Valid town id list
-app.Custom.ValidTownList = {1,2,3,4}
+app.Custom.ValidTownList = {3}
 
 -- Valid vocation id list
-app.Custom.ValidVocationList = {1, 2, 3, 4}
+app.Custom.ValidVocationList = {0}
 
 -- New character values
 app.Custom.NewCharacterValues = {
-	[1] = { -- no voc (vocation ID -1)
+	[0] = { -- no voc (vocation ID -1)
 		level = 1,
 	    experience = 0,
 	    health = 150,
@@ -16,7 +16,7 @@ app.Custom.NewCharacterValues = {
 	    cap = 435,
 	    soul = 0
 	},
-	[2] = { -- sorc
+	[1] = { -- sorc
 		level = 8,
 	    experience = 4200,
 	    health = 185,
@@ -28,13 +28,13 @@ app.Custom.NewCharacterValues = {
 	    -- extra = {["maglevel"] = 45, ["skill_shielding"] = 20}
 	    -- NOTE: the keys in extra ( ["key"] = value ) must be valid column names in your players table.
 	},
-	[3] = { -- druid
+	[2] = { -- druid
 		inherit_from = 2 -- remove this line if you want to use custom values
 	},
-	[4] = { -- paladin
+	[3] = { -- paladin
 		inherit_from = 2
 	},
-	[5] = { -- knight
+	[4] = { -- knight
 		inherit_from = 2
 	}
 }

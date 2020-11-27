@@ -12,8 +12,8 @@ function post()
         return
     end
 
-    if http.postValues["character-name"]:len() < 5 or http.postValues["character-name"]:len() > 12 then
-        session:setFlash("validation-error", "Invalid character name. Names can only have 5 to 12 characters")
+    if http.postValues["character-name"]:len() < 4 or http.postValues["character-name"]:len() > 16 then
+        session:setFlash("validation-error", "Invalid character name. Names can only have 4 to 16 characters")
         http:redirect()
         return
     end
